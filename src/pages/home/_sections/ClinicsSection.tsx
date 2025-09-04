@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { forwardRef, useState } from 'react';
 
 import ArrowUp from '@/shared/assets/icons/arrowUp.svg?react';
-import Clinic1 from '@/shared/assets/imgs/clinic1.png';
-import Clinic2 from '@/shared/assets/imgs/clinic2.png';
+// import Clinic1 from '@/shared/assets/imgs/clinic1.png';
+// import Clinic2 from '@/shared/assets/imgs/clinic2.png';
 import {
   Carousel,
   CarouselContent,
@@ -31,7 +31,7 @@ const clinics: Clinic[] = [
     before:
       'Несовпадения сумм в кассе, уходило много времени на внесение данных в разные системы',
     after: 'Онлайн-запись, единое расписание, одонтограмма в один клик',
-    icon: Clinic1,
+    icon: '',
   },
   {
     city: 'Алматы',
@@ -39,7 +39,7 @@ const clinics: Clinic[] = [
     before:
       'Часто путались в расписании, врачи тратили время на бумажные карты',
     after: 'Онлайн-запись, единое расписание, одонтограмма в один клик',
-    icon: Clinic2,
+    icon: '',
   },
 ];
 
@@ -70,7 +70,7 @@ const ClinicsSection = forwardRef<HTMLDivElement, ClinicsSectionProps>(
                 opts={{ loop: true }}
                 className="w-full max-w-sm sm:max-w-xl"
               >
-                <CarouselContent className="ml-0 gap-1">
+                <CarouselContent className="ml-0 w-[100%] gap-1">
                   {clinics.map((item, index) => (
                     <CarouselItem
                       key={index}

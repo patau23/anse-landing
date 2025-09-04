@@ -43,29 +43,13 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
 
   const langPicker = (
     <DropdownMenu>
-      <DropdownMenuTrigger
-        className="
-          flex
-          my-4 mt-auto mr-4 p-4 py-4
-          bg-tab-bg
-          rounded-full
-          md:my-0 md:mt-0 md:py-0 md:bg-white
-        "
-      >
+      <DropdownMenuTrigger className="bg-tab-bg my-4 mt-auto mr-4 flex rounded-[1.25rem] p-4 py-4 md:my-0 md:mt-0 md:bg-white md:py-0">
         <img
           src={LanguageFlagMap[i18next.language]}
           alt={i18next.language}
-          className="
-            h-5 w-8
-          "
+          className="h-5 w-8"
         />
-        <span
-          className="
-            flex
-            mr-1 ml-2
-            items-center justify-center
-          "
-        >
+        <span className="mr-1 ml-2 flex items-center justify-center">
           {i18next.language.toUpperCase()}
         </span>
         <Down />
@@ -77,13 +61,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             onClick={() => handleLanguageChange(lang)}
           >
             {lang.toUpperCase()}
-            <img
-              src={LanguageFlagMap[lang]}
-              alt={lang}
-              className="
-                w-8
-              "
-            />
+            <img src={LanguageFlagMap[lang]} alt={lang} className="w-8" />
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
@@ -91,25 +69,14 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
   );
 
   const logo = (
-    <div
-      className="
-        flex
-        bg-white
-        rounded-4xl
-        items-center justify-center
-      "
-    >
-      <span
-        className="
-          text-system-bg-light-primary text-[22px] leading-[28px] font-bold tracking-[0.35px]
-        "
-      >
+    <div className="flex items-center justify-center rounded-4xl">
+      <span className="text-system-bg-light-primary text-[22px] leading-[28px] font-bold tracking-[0.35px] text-white">
         Логотип
       </span>
     </div>
   );
 
-  const deskTopHeader = (
+  const desktopHeader = (
     <AnimatePresence>
       {!hidden && (
         <>
@@ -119,12 +86,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
             onClick={() => setHidden(true)}
-            className="
-              z-20
-              bg-black
-              fixed inset-0
-              md:hidden
-            "
+            className="fixed inset-0 z-20 bg-black md:hidden"
           />
           <motion.div
             variants={{
@@ -141,47 +103,25 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             animate={hidden ? 'hidden' : 'visible'}
             exit={'hidden'}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="
-              z-[25] flex flex-col
-              h-[100dvh] w-[220px]
-              bg-white
-              rounded-none
-              fixed top-0 right-[0] items-center justify-start gap-4
-              md:flex-row md:h-22 md:w-full md:bg-tab-bg md:rounded-full md:sticky md:top-0 md:right-auto md:justify-between md:gap-0
-            "
+            className="md:bg-tab-bg bg-tab-bg fixed top-0 right-[0] z-[25] flex h-[100dvh] w-[220px] flex-col items-center justify-start gap-4 rounded-none md:sticky md:top-0 md:right-auto md:h-22 md:w-full md:flex-row md:justify-between md:gap-0 md:rounded-full"
           >
             <div
               onClick={() => setHidden(true)}
-              className="
-                flex
-                w-full
-                p-4
-                justify-end
-                md:hidden
-              "
+              className="flex w-full justify-end p-4 md:hidden"
             >
               <Close />
             </div>
+
             {/* Logo */}
             {logo}
+
             <TabsWrapper
               value={section}
-              className="
-                w-full
-                mt-2
-                items-center
-                md:w-auto md:mt-0
-              "
+              className="mt-2 w-full items-center md:mt-0 md:w-auto"
             >
               <TabsList
                 defaultValue={section}
-                className="
-                  flex-col
-                  h-11 w-full
-                  p-0
-                  bg-white
-                  md:flex-row md:p-1
-                "
+                className="bg-bg-body h-11 w-full flex-col p-0 md:flex-row md:p-1"
               >
                 {Sections.map((tab: string) => (
                   <TabsTrigger
@@ -193,12 +133,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
                         setHidden(true);
                       }
                     }}
-                    className="
-                      w-full
-                      text-lg text-black
-                      data-[state=active]:text-primary
-                      md:w-auto
-                    "
+                    className="data-[state=active]:text-primary w-full border-t border-r-0 border-b border-l-0 border-[#D9D9D9] text-lg font-normal text-white data-[state=active]:bg-white md:w-auto"
                   >
                     {t(`header.${tab}`)}
                   </TabsTrigger>
@@ -209,17 +144,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             {/* Language Picker */}
             {langPicker}
 
-            <button
-              className="
-                px-4 py-3
-                font-semibold text-black
-                bg-white
-                rounded-[32px]
-                transition-all
-                duration-300 ease-in-out hover:scale-105 hover:bg-blue-400 hover:shadow-lg
-                md:px-6 md:py-4
-              "
-            >
+            <button className="rounded-[32px] bg-white px-4 py-3 font-semibold text-black transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-400 hover:shadow-lg md:px-6 md:py-4">
               {/* {t('hero.demo')} */}
               Регистрация
             </button>
@@ -230,40 +155,22 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
   );
 
   const mobileHeader = (
-    <div
-      className="
-        flex
-        px-4 py-3
-        bg-background
-        sticky top-0 justify-between
-        md:hidden
-      "
-    >
+    <div className="bg-background sticky top-0 flex justify-between px-4 py-3 md:hidden">
       {/* Logo */}
       {logo}
 
       <motion.div>
         <Burger
           onClick={() => setHidden(false)}
-          className="
-            h-10 w-10
-            p-2
-            bg-tab-bg
-            rounded-3xl
-          "
+          className="text-primary h-10 w-10 rounded-[12px] bg-white p-2"
         />
       </motion.div>
     </div>
   );
 
   return (
-    <header
-      className="
-        z-[25]
-        sticky top-0
-      "
-    >
-      {deskTopHeader}
+    <header className="sticky top-0 z-[25]">
+      {desktopHeader}
       {mobileHeader}
     </header>
   );

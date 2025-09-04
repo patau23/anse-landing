@@ -1,15 +1,18 @@
-import { Sections } from '@/shared/constants/navigation';
-import { useStore } from '@/store';
-import Header from '@/shared/components/ui/header.tsx';
-import { useRef } from 'react';
-import HeroSection from '@/pages/home/_sections/HeroSection';
-import GrowSection from '@/pages/home/_sections/GrowSection';
-import FeatureSection from '@/pages/home/_sections/FeatureSection';
 import ClinicsSection from '@/pages/home/_sections/ClinicsSection';
+import FaqSection from '@/pages/home/_sections/FaqSection';
+import FeatureSection from '@/pages/home/_sections/FeatureSection';
+import FormSection from '@/pages/home/_sections/FormSection';
 import ServiceSection from '@/pages/home/_sections/ServiceSection';
 import TariffSection from '@/pages/home/_sections/TariffSection';
-import FaqSection from '@/pages/home/_sections/FaqSection';
-import FormSection from '@/pages/home/_sections/FormSection';
+import Header from '@/shared/components/ui/header.tsx';
+import { Sections } from '@/shared/constants/navigation';
+import { useStore } from '@/store';
+import { useRef } from 'react';
+import AnseAbouts from './components/sections/anse-abouts';
+import ForumAbout from './components/sections/forum-about';
+import HeroBlock from './components/sections/hero-block';
+import EnuAbout from './components/sections/enu-about';
+import Speakers from './components/sections/speakers';
 
 const HomePage = () => {
   const setSection = useStore((state) => state.updateSection);
@@ -79,19 +82,31 @@ const HomePage = () => {
     <div>
       {/*<button onClick={() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}>Hello world</button>*/}
       <Header handleTabClick={handleTabClick} />
-      <HeroSection
+      <HeroBlock
         ref={heroRef}
         onViewportEnter={() => handleViewportEnter(0)}
         handleTabClick={handleTabClick}
       />
-      <GrowSection
+
+      <ForumAbout
         ref={growRef}
         onViewportEnter={() => handleViewportEnter(1)}
       />
+
+      <AnseAbouts
+        ref={growRef}
+        onViewportEnter={() => handleViewportEnter(2)}
+      />
+
+      <EnuAbout ref={growRef} onViewportEnter={() => handleViewportEnter(3)} />
+
+      <Speakers onViewportEnter={() => handleViewportEnter(4)} />
+
       <FeatureSection
         ref={featureRef}
         onViewportEnter={() => handleViewportEnter(2)}
       />
+
       <ServiceSection
         ref={serviceRef}
         onViewportEnter={() => handleViewportEnter(3)}

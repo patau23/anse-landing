@@ -7,7 +7,7 @@ export const homePage = {
     login: 'Вход',
   },
   hero: {
-    title: 'DDent —',
+    title: 'Форум',
     subtitle: {
       start: 'цифровая',
       middle: 'стоматология',

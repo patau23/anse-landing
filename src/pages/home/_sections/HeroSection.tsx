@@ -1,9 +1,7 @@
+import Logo from '@/shared/assets/icons/logo.svg?react';
 import { motion, useAnimationControls } from 'framer-motion';
 import { forwardRef, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import PhoneImg from '@/shared/assets/imgs/phone.webp';
-import LaptopImg from '@/shared/assets/imgs/laptop.webp';
-import Logo from '@/shared/assets/icons/logo.svg?react';
 
 interface HeroSectionProps {
   onViewportEnter: () => void;
@@ -112,7 +110,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
             </mask>
 
             <g mask="url(#mask1_6235_811)">
-              <motion.image
+              {/* <motion.image
                 href={PhoneImg}
                 xlinkHref={PhoneImg}
                 x="100"
@@ -133,7 +131,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
                 initial={'initial'}
                 animate={controlPhone}
                 transition={{ duration: 0.6 }}
-              />
+              /> */}
             </g>
           </g>
         </svg>
@@ -183,7 +181,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
               <rect x="-182" y="0.018" width="1232.97" height="587.981" />
             </g>
           </g>
-          <motion.image
+          {/* <motion.image
             id="image1_6235_801"
             width="839"
             height="805"
@@ -206,7 +204,7 @@ const HeroSection = forwardRef<HTMLDivElement, HeroSectionProps>(
             initial={'initial'}
             animate={controlPhone}
             transition={{ duration: 0.6, delay: 0.2 }}
-          />
+          /> */}
           <defs>
             <pattern
               id="pattern1_6235_801"
