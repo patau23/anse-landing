@@ -12,6 +12,21 @@ interface Props {
   onViewportEnter: () => void;
 }
 
+// =======================
+// i18n-like texts
+// =======================
+const TEXT = {
+  section: {
+    badge: 'ЕНУ',
+    title: 'Евразийский Национальный Университет им. Л.Н. Гумилёва',
+    description:
+      'Один из ведущих университетов Центральной Азии, входящий в топ-500 мировых вузов. Обладает современными лабораториями по машинному обучению, Big Data и цифровым технологиям.',
+  },
+  images: {
+    enuAlt: '',
+  },
+} as const;
+
 const EnuAbout = forwardRef<HTMLDivElement, Props>(
   ({ onViewportEnter }, ref) => {
     const { t } = useTranslation('homePage');
@@ -34,9 +49,9 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
           )}
         >
           <SectionHiga
-            badgeText="ЕНУ"
-            title="Евразийский Национальный Университет им. Л.Н. Гумилёва"
-            description="Один из ведущих университетов Центральной Азии, входящий в топ-500 мировых вузов. Обладает современными лабораториями по машинному обучению, Big Data и цифровым технологиям."
+            badgeText={TEXT.section.badge}
+            title={TEXT.section.title}
+            description={TEXT.section.description}
           />
 
           <div
@@ -47,7 +62,7 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
           >
             <img
               src={isDesktop ? EnuPicLg : EnuPic}
-              alt=""
+              alt={TEXT.images.enuAlt}
               className="aspect-[263/96] h-[96px] w-[263px] md:aspect-auto md:h-auto md:w-auto"
             />
           </div>
@@ -56,7 +71,6 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
             <SocialTag type="inst" />
             <SocialTag type="vk" />
           </div>
-          {/*  */}
         </div>
       </motion.section>
     );

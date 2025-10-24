@@ -1,4 +1,9 @@
-import DefaultImg from '@/shared/assets/imgs/default-person-image.png';
+import Person1Img from '@/shared/assets/imgs/person-1-image.png';
+import Person2Img from '@/shared/assets/imgs/person-2-image.png';
+import Person3Img from '@/shared/assets/imgs/person-3-image.jpg';
+import Person4Img from '@/shared/assets/imgs/person-4-image.jpg';
+import Person5Img from '@/shared/assets/imgs/person-5-image.jpg';
+import Person6Img from '@/shared/assets/imgs/person-6-image.jpg';
 import SpeakersRibbonLinesLg from '@/shared/assets/imgs/ribbon-lines-speakers-lg.png';
 import SpeakersRibbonLines from '@/shared/assets/imgs/ribbon-lines-speakers.png';
 import SecondSpeakersRibbonLinesLg from '@/shared/assets/imgs/second-ribbon-lines-speakers-lg.png';
@@ -19,10 +24,11 @@ interface FeatureSectionProps {
 
 const FeatureItems = [
   {
-    key: 'alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
+    key: '1',
+    img: Person1Img,
+    title: 'Россинская Елена Рафаиловна',
+    profession:
+      'Советский и российский учёный-юрист, специалист в области криминалистики и судебной экспертизы, заведующая Кафедрой судебных экспертиз и научный руководитель Института судебных экспертиз МГЮА, доктор юридических наук, профессор, заслуженный деятель науки РФ.',
     topic: (
       <>
         «Автоматический анализ рукописного <br /> текста с помощью AI»
@@ -30,59 +36,43 @@ const FeatureItems = [
     ),
   },
   {
-    key: 'notalma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
+    key: '2',
+    img: Person2Img,
+    title: 'Эпштейн Вадим Аркадьевич',
+    profession:
+      'Директор по развитию Частного экспертного учреждения «Городское учреждение судебной экспертизы» в г.Санкт-Петербург, эксперт в области организации судебно-экспертной деятельности.',
     topic: '«Автоматический анализ рукописного текста с помощью AI»',
   },
   {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
+    key: '3',
+    img: Person3Img,
+    title: 'Иманалиев Канат Сабырбекович',
+    profession:
+      'Директор ООО «Негосударственная судебно-экспертная организация научно-консультативный центр «РЕЦЕНЗИО», председатель Совета ветеранов криминалистической службы МВД Кыргызстана.',
     topic: '«Автоматический анализ рукописного текста с помощью AI»',
   },
   {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
+    key: '4',
+    img: Person4Img,
+    title: 'Вранчев Игорь Олегович',
+    profession:
+      'Адвокат, заместитель Председателя Республиканской коллегии адвокатов Республики Казахстан',
     topic: '«Автоматический анализ рукописного текста с помощью AI»',
   },
   {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
+    key: '5',
+    img: Person5Img,
+    title: 'Амарнат Мишра',
+    profession:
+      'Адъюнкт-профессор Института судебной медицины при Университете Эмити в штате Уттар-Прадеш (Индия).',
     topic: '«Автоматический анализ рукописного текста с помощью AI»',
   },
   {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
-    topic: '«Автоматический анализ рукописного текста с помощью AI»',
-  },
-  {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
-    topic: '«Автоматический анализ рукописного текста с помощью AI»',
-  },
-  {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
-    topic: '«Автоматический анализ рукописного текста с помощью AI»',
-  },
-  {
-    key: 'drugaya-alma',
-    img: DefaultImg,
-    title: 'Кенжебекова Алма',
-    profession: 'Доктор юридических наук, профессор',
+    key: '6',
+    img: Person6Img,
+    title: 'Давид Хомерики',
+    profession:
+      'Главный судебный эксперт судебно-криминалистического департамента МВД Грузии, консультативный член Глобальной молодёжной академии передовой судебной экспертизы (GYAAF).  ',
     topic: '«Автоматический анализ рукописного текста с помощью AI»',
   },
 ];
