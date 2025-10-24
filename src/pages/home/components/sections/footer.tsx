@@ -6,7 +6,6 @@ import PhoneIcon from '@/shared/assets/icons/ios/ios-phone.svg?react';
 import PinPointIcon from '@/shared/assets/icons/ios/ios-pin-point.svg?react';
 import InstIcon from '@/shared/assets/icons/socials/insta-outlined.svg?react';
 import TgIcon from '@/shared/assets/icons/socials/telegram-icon.svg?react';
-import VkIcon from '@/shared/assets/icons/socials/vk-outlined.svg?react';
 import SectionBadge from '@/shared/components/ui/section-higa/section-badge';
 import clsx from 'clsx';
 
@@ -26,17 +25,10 @@ const Footer = ({ onViewportEnter }: Props) => {
 
   const listItems = (icon: string | React.ReactNode, text: string) => {
     return (
-      <div
-        className={clsx(
-          'flex items-center gap-3',
-
-          ''
-        )}
-      >
+      <a className={clsx('flex items-center gap-3', '')}>
         <span
           className={clsx(
             'flex aspect-square h-8 w-8 flex-col items-center justify-center gap-[10px] rounded-lg bg-[var(--Label-Color-Dark-Quaternary,rgba(235,235,245,0.18))] p-[12px_16px]',
-
             ''
           )}
         >
@@ -45,13 +37,12 @@ const Footer = ({ onViewportEnter }: Props) => {
         <span
           className={clsx(
             'text-[16px] leading-[21px] font-normal tracking-[-0.32px] text-[var(--Label-Color-Dark-Primary,#FFF)]',
-
             ''
           )}
         >
           {text}
         </span>
-      </div>
+      </a>
     );
   };
 
@@ -77,8 +68,8 @@ const Footer = ({ onViewportEnter }: Props) => {
           )}
         >
           <SectionBadge text="Контакты" />
-          {listItems(<PhoneIcon />, '+7 (XXX) XXX-XX-XX')}
-          {listItems(<MailIcon />, 'info@anse.kz')}
+          {listItems(<PhoneIcon />, '+7 777 013 77 73')}
+          {listItems(<MailIcon />, 'ansesykz@gmail.com')}
           {listItems(<PinPointIcon />, 'Астана, ЕНУ им. Л.Н. Гумилёва')}
         </div>
 
@@ -96,9 +87,10 @@ const Footer = ({ onViewportEnter }: Props) => {
           )}
         >
           <SectionBadge text="Соцсети" />
-          {listItems(<InstIcon />, '+7 (XXX) XXX-XX-XX')}
-          {listItems(<VkIcon />, 'info@anse.kz')}
-          {listItems(<TgIcon />, 'Астана, ЕНУ им. Л.Н. Гумилёва')}
+          {listItems(<InstIcon />, 'https://www.instagram.com/ansesykz/')}
+          {/* {listItems(<VkIcon />, 'info@anse.kz')} */}
+          {listItems(<TgIcon />, 'Telegram')}
+          {listItems(<TgIcon />, 'WhatsApp')}
         </div>
 
         <div

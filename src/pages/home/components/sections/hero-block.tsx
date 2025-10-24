@@ -94,7 +94,7 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
           <div className="z-30 flex flex-col items-center gap-6 self-stretch md:mt-[150px]">
             <SectionHiga
               badgeText={t('hero.title')}
-              title={'Искусственный интеллект в судебной экспертизе'}
+              title={'Будущее судебной экспертизы в эпоху ИИ'}
             />
 
             <div
@@ -104,7 +104,7 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
               )}
             >
               {listItem(
-                '10–11 октября 2025',
+                '20 ноября 2025',
                 <Calendar className="min-h-[20px] md:min-h-[38px] md:min-w-[32px]" />
               )}
               {listItem(

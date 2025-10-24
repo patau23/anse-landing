@@ -13,11 +13,25 @@ interface Props {
   onViewportEnter: () => void;
 }
 
-const Items = [
-  { index: 1, label: 'Признаны судами и следственными органами' },
-  { index: 2, label: 'Признаны судами и следственными органами' },
-  { index: 3, label: 'Работаем по всей стране' },
-];
+// =======================
+// i18n-like texts
+// =======================
+const TEXT = {
+  section: {
+    badge: 'Об АНСЭ',
+    titlePart1: 'Альянс Независимой',
+    titlePart2: 'Судебной Экспертизы',
+    description:
+      'Более 10 лет опыта, 5000+ проведённых экспертиз, работа по всей территории Казахстана. Мы внедряем AI в экспертную практику, чтобы обеспечить максимальную точность и скорость исследований.',
+  },
+  items: [
+    { index: 1, label: 'Признаны судами и следственными органами' },
+    { index: 2, label: 'Признаны судами и следственными органами' },
+    { index: 3, label: 'Работаем по всей стране' },
+  ] as { index: number; label: string }[],
+} as const;
+
+const Items = TEXT.items;
 
 const AnseAbouts = forwardRef<HTMLDivElement, Props>(
   ({ onViewportEnter }, ref) => {
@@ -61,13 +75,13 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
           )}
         >
           <SectionHiga
-            badgeText="Об АНСЭ"
+            badgeText={TEXT.section.badge}
             title={
               <>
-                Альянс Независимой <br /> Судебной Экспертизы
+                {TEXT.section.titlePart1} <br /> {TEXT.section.titlePart2}
               </>
             }
-            description="Более 10 лет опыта, 5000+ проведённых экспертиз, работа по всей территории Казахстана. Мы внедряем AI в экспертную практику, чтобы обеспечить максимальную точность и скорость исследований."
+            description={TEXT.section.description}
           />
 
           <img

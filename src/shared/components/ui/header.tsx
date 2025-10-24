@@ -110,7 +110,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             transition={{ duration: 0.25, ease: 'easeOut' }}
             className={clsx(
               'bg-tab-bg fixed top-0 right-[0] z-[25] flex h-[100dvh] w-[220px] flex-col items-center justify-start gap-4 rounded-none',
-              'md:bg-tab-bg md:relative md:inset-auto md:mx-auto md:h-22 md:w-full md:max-w-6xl md:flex-row md:items-center md:justify-center md:gap-0 md:rounded-full md:px-6 md:py-3'
+              'md:bg-tab-bg md:relative md:inset-auto md:mx-auto md:h-22 md:w-full md:max-w-6xl md:flex-row md:items-center md:justify-evenly md:gap-0 md:rounded-full md:px-6 md:py-3'
             )}
           >
             <div
@@ -131,41 +131,37 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
                 defaultValue={section}
                 className="bg-bg-body h-11 w-full flex-col p-0 md:flex-row md:p-1"
               >
-                {[
-                  Sections[1],
-                  Sections[2],
-                  Sections[3],
-                  Sections[4],
-                  Sections[5],
-                ].map((tab: string) => (
-                  <TabsTrigger
-                    key={tab}
-                    value={tab}
-                    onClick={() => {
-                      handleTabClick(tab);
-                      if (window.innerWidth < 767) {
-                        setHidden(true);
-                      }
-                    }}
-                    className="data-[state=active]:text-primary w-full border-t border-r-0 border-b border-l-0 border-[#D9D9D9] text-lg font-normal text-white data-[state=active]:bg-white md:w-auto"
-                  >
-                    {t(`header.${tab}`)}
-                  </TabsTrigger>
-                ))}
+                {[Sections[1], Sections[2], Sections[3], Sections[4]].map(
+                  (tab: string) => (
+                    <TabsTrigger
+                      key={tab}
+                      value={tab}
+                      onClick={() => {
+                        handleTabClick(tab);
+                        if (window.innerWidth < 767) {
+                          setHidden(true);
+                        }
+                      }}
+                      className="data-[state=active]:text-primary w-full border-t border-r-0 border-b border-l-0 border-[#D9D9D9] text-lg font-normal text-white data-[state=active]:bg-white md:w-auto"
+                    >
+                      {t(`header.${tab}`)}
+                    </TabsTrigger>
+                  )
+                )}
               </TabsList>
             </TabsWrapper>
 
             {/* Language Picker */}
             {langPicker}
 
-            <button
+            {/* <button
               className={clsx(
                 'max-h-[42px] rounded-[12px] bg-white px-[24px] py-[10px] font-semibold text-black transition-all duration-300 ease-in-out hover:scale-105 hover:bg-indigo-400',
                 ''
               )}
             >
               <span>Регистрация</span>
-            </button>
+            </button> */}
           </motion.div>
         </>
       )}
