@@ -1,18 +1,15 @@
-import ClinicsSection from '@/pages/home/_sections/ClinicsSection';
-import FaqSection from '@/pages/home/_sections/FaqSection';
-import FeatureSection from '@/pages/home/_sections/FeatureSection';
-import FormSection from '@/pages/home/_sections/FormSection';
-import ServiceSection from '@/pages/home/_sections/ServiceSection';
-import TariffSection from '@/pages/home/_sections/TariffSection';
 import Header from '@/shared/components/ui/header.tsx';
 import { Sections } from '@/shared/constants/navigation';
 import { useStore } from '@/store';
 import { useRef } from 'react';
 import AnseAbouts from './components/sections/anse-abouts';
+import ApplyBlock from './components/sections/apply-block';
+import EnuAbout from './components/sections/enu-about';
+import Footer from './components/sections/footer';
 import ForumAbout from './components/sections/forum-about';
 import HeroBlock from './components/sections/hero-block';
-import EnuAbout from './components/sections/enu-about';
 import Speakers from './components/sections/speakers';
+import Training from './components/sections/training';
 
 const HomePage = () => {
   const setSection = useStore((state) => state.updateSection);
@@ -22,23 +19,23 @@ const HomePage = () => {
 
   // Section refs
   const heroRef = useRef<HTMLDivElement>(null);
-  const growRef = useRef<HTMLDivElement>(null);
-  const featureRef = useRef<HTMLDivElement>(null);
-  const serviceRef = useRef<HTMLDivElement>(null);
-  const clinicsRef = useRef<HTMLDivElement>(null);
-  const tariffRef = useRef<HTMLDivElement>(null);
-  const faqRef = useRef<HTMLDivElement>(null);
-  const formRef = useRef<HTMLDivElement>(null);
+  const secondref = useRef<HTMLDivElement>(null);
+  const thirdref = useRef<HTMLDivElement>(null);
+  const fourthref = useRef<HTMLDivElement>(null);
+  const fifthref = useRef<HTMLDivElement>(null);
+  const sixthref = useRef<HTMLDivElement>(null);
+  const seventhref = useRef<HTMLDivElement>(null);
+  const eighthref = useRef<HTMLDivElement>(null);
 
   const sectionRefs = [
     heroRef,
-    growRef,
-    featureRef,
-    serviceRef,
-    clinicsRef,
-    tariffRef,
-    faqRef,
-    formRef,
+    secondref,
+    thirdref,
+    fourthref,
+    fifthref,
+    sixthref,
+    seventhref,
+    eighthref,
   ];
 
   const handleViewportEnter = (idx: number) => {
@@ -79,34 +76,41 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      {/*<button onClick={() => formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" })}>Hello world</button>*/}
+    <div className="overflow-hidden">
       <Header handleTabClick={handleTabClick} />
       <HeroBlock
         ref={heroRef}
         onViewportEnter={() => handleViewportEnter(0)}
         handleTabClick={handleTabClick}
       />
-
       <ForumAbout
-        ref={growRef}
+        ref={secondref}
         onViewportEnter={() => handleViewportEnter(1)}
       />
-
       <AnseAbouts
-        ref={growRef}
+        ref={thirdref}
         onViewportEnter={() => handleViewportEnter(2)}
       />
+      <EnuAbout
+        ref={fourthref}
+        onViewportEnter={() => handleViewportEnter(3)}
+      />
 
-      <EnuAbout ref={growRef} onViewportEnter={() => handleViewportEnter(3)} />
+      <Speakers ref={fifthref} onViewportEnter={() => handleViewportEnter(4)} />
 
-      <Speakers onViewportEnter={() => handleViewportEnter(4)} />
+      <Training ref={sixthref} onViewportEnter={() => handleViewportEnter(5)} />
 
-      <FeatureSection
+      <ApplyBlock
+        ref={seventhref}
+        onViewportEnter={() => handleViewportEnter(6)}
+      />
+
+      <Footer onViewportEnter={() => handleViewportEnter(7)} />
+
+      {/* <FeatureSection
         ref={featureRef}
         onViewportEnter={() => handleViewportEnter(2)}
       />
-
       <ServiceSection
         ref={serviceRef}
         onViewportEnter={() => handleViewportEnter(3)}
@@ -123,7 +127,7 @@ const HomePage = () => {
       <FormSection
         ref={formRef}
         onViewportEnter={() => handleViewportEnter(7)}
-      />
+      /> */}
     </div>
   );
 };

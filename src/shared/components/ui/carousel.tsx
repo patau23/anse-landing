@@ -131,7 +131,14 @@ function Carousel({
 }
 
 function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
-  const { carouselRef, orientation } = useCarousel();
+  const {
+    carouselRef,
+    orientation,
+    scrollNext,
+    scrollPrev,
+    canScrollNext,
+    canScrollPrev,
+  } = useCarousel();
 
   return (
     <div
@@ -147,6 +154,24 @@ function CarouselContent({ className, ...props }: React.ComponentProps<'div'>) {
         )}
         {...props}
       />
+      <div className="flex items-center justify-between">
+        <button
+          onClick={scrollPrev}
+          disabled={!canScrollPrev}
+          className="p-2"
+          aria-label="Previous Slide"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={scrollNext}
+          disabled={!canScrollNext}
+          className="p-2"
+          aria-label="Next Slide"
+        >
+          &gt;
+        </button>
+      </div>
     </div>
   );
 }

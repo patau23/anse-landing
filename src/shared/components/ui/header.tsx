@@ -21,6 +21,7 @@ import { LanguageFlagMap } from '@/shared/constants/i18n/LanguageFlagMap.ts';
 import { Sections } from '@/shared/constants/navigation.ts';
 import { useStore } from '@/store';
 import { AnimatePresence } from 'motion/react';
+import Logo from '@/shared/assets/icons/anse-enu-logo-white.svg?react';
 
 interface HeaderProps {
   handleTabClick: (tabValue: string) => void;
@@ -71,7 +72,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
   const logo = (
     <div className="flex items-center justify-center rounded-4xl">
       <span className="text-system-bg-light-primary text-[22px] leading-[28px] font-bold tracking-[0.35px] text-white">
-        Логотип
+        <Logo />
       </span>
     </div>
   );
@@ -145,7 +146,6 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             {langPicker}
 
             <button className="rounded-[32px] bg-white px-4 py-3 font-semibold text-black transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-400 hover:shadow-lg md:px-6 md:py-4">
-              {/* {t('hero.demo')} */}
               Регистрация
             </button>
           </motion.div>

@@ -1,21 +1,46 @@
-import { forwardRef } from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import Pc from '@/shared/assets/icons/pc.svg?react';
+import DefaultImg from '@/shared/assets/imgs/default-person-image.png';
+import SpeakersRibbonLines from '@/shared/assets/imgs/ribbon-lines-speakers.png';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
 } from '@/shared/components/ui/carousel.tsx';
+import SectionHiga from '@/shared/components/ui/section-higa';
+import { motion } from 'framer-motion';
+import { forwardRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface FeatureSectionProps {
   onViewportEnter: () => void;
 }
 
-const FeatureItems = [1, 2, 3, 4, 5, 6].map((i) => ({
-  title: `feature.panels.panel${i}.title`,
-  text: `feature.panels.panel${i}.text`,
-}));
+const FeatureItems = [
+  {
+    key: 'alma',
+    img: DefaultImg,
+    title: 'Кенжебекова Алма',
+    profession: 'Доктор юридических наук, профессор',
+    topic: (
+      <>
+        «Автоматический анализ рукописного <br /> текста с помощью AI»
+      </>
+    ),
+  },
+  {
+    key: 'notalma',
+    img: DefaultImg,
+    title: 'Кенжебекова Алма',
+    profession: 'Доктор юридических наук, профессор',
+    topic: '«Автоматический анализ рукописного текста с помощью AI»',
+  },
+  {
+    key: 'drugaya-alma',
+    img: DefaultImg,
+    title: 'Кенжебекова Алма',
+    profession: 'Доктор юридических наук, профессор',
+    topic: '«Автоматический анализ рукописного текста с помощью AI»',
+  },
+];
 
 const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
   ({ onViewportEnter }, ref) => {
@@ -23,24 +48,24 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
 
     return (
       <motion.div
-        className="bg-bg-primary relative h-[70vh] w-full md:h-[100vh]"
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.05 }}
         ref={ref}
+        className="bg-bg-primary relative flex h-[calc(80vh)] w-full flex-col items-center gap-[var(--Global-token-Padding-paddingSM,12px)] self-stretch overflow-hidden px-2 py-8 md:h-[100vh] md:justify-center"
       >
-        <div className="absolute top-[8vh] flex w-full flex-col items-center justify-center lg:top-[20vh] xl:top-[11vh] 2xl:top-[12vh]">
-          <p className="mb-10 flex items-start justify-center gap-0 px-4 text-center lg:gap-4 lg:px-0 xl:mb-4">
-            <span className="w-[75%] text-[17px] font-semibold md:w-auto md:text-[34px]">
-              {t('feature.title')}
-            </span>
-            <Pc className="mt-[0px] h-7 w-8 md:mt-[-10px] md:h-[70px] md:w-[70px]" />
-          </p>
+        <div className="flex flex-col items-center gap-6 self-stretch">
+          <SectionHiga badgeText="Спикеры" />
+
+          <img
+            src={SpeakersRibbonLines}
+            className="absolute bottom-0 left-0 min-h-[350.164px] min-w-[446px]"
+          />
+
           <div className="flex w-full flex-col justify-center gap-4 xl:gap-2">
             {window?.innerWidth >= 1024 ? (
               FeatureItems.map((item, index) => (
                 <motion.div
-                  key={item.text}
-                  className="3xl:gap-4 3xl:p-4 flex items-center justify-start gap-2 p-2 xl:gap-2 xl:p-2"
+                  key={item.title + index}
                   variants={{
                     initial: {
                       opacity: 0,
@@ -53,6 +78,7 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
                   whileInView={'animated'}
                   transition={{ delay: (index + 1) / 15, duration: 0.3 }}
                   viewport={{ once: true }}
+                  className="3xl:gap-4 3xl:p-4 flex items-center justify-start gap-2 p-2 xl:gap-2 xl:p-2"
                 >
                   <p className="mr-2 rounded-4xl bg-[#C0FE5C] px-2 py-3 text-center text-[22px] leading-6 font-medium whitespace-nowrap xl:px-4 xl:py-5">
                     0{index + 1} /
@@ -61,11 +87,11 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
                     {t(item.title)}
                   </p>
                   <p className="grow-0 text-center text-[16px] leading-6 text-[rgba(0,0,0,0.45)] xl:text-xl">
-                    {t(item.text)}
+                    {item.topic}
                   </p>
                   <button
-                    className="bg-primary ml-auto shrink-0 cursor-not-allowed rounded-4xl px-3 py-2 text-white xl:px-6 xl:py-4"
                     title="В данный момент недоступно"
+                    className="bg-primary ml-auto shrink-0 cursor-not-allowed rounded-4xl px-3 py-2 text-white xl:px-6 xl:py-4"
                   >
                     {t('feature.video')}
                   </button>
@@ -73,31 +99,35 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
               ))
             ) : (
               <Carousel
-                className="w-full max-w-sm sm:max-w-3xl"
                 opts={{ loop: true }}
+                className="w-full max-w-sm sm:max-w-3xl"
               >
                 <CarouselContent>
                   {FeatureItems.map((item, index) => (
                     <CarouselItem key={index}>
                       <div
-                        key={item.text}
-                        className="flex flex-col items-center justify-center gap-4 rounded-[12px] bg-white px-2 py-6"
+                        key={item.title + index}
+                        className="flex flex-col items-center justify-center gap-4 select-none"
                       >
-                        <p className="mr-2 rounded-4xl bg-[#C0FE5C] px-2 py-3 text-center text-[17px] leading-6 font-medium">
-                          0{index + 1} /
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="pointer-events-none h-[260px] w-[220px] rounded-2xl object-cover select-none"
+                          draggable="false"
+                        />
+
+                        <div className="flex w-full flex-col items-center gap-1">
+                          <h3 className="text-center text-lg text-[20px] leading-6 font-semibold tracking-tight text-white">
+                            {t(item.title)}
+                          </h3>
+                          <p className="w-full text-center text-sm text-[13px] leading-5 font-normal text-[rgba(235,235,245,0.60)]">
+                            {t(item.profession)}
+                          </p>
+                        </div>
+
+                        <p className="w-full text-center text-base text-[17px] leading-6 font-normal text-white">
+                          {item.topic}
                         </p>
-                        <p className="text-center text-[16px] leading-6 font-medium">
-                          {t(item.title)}
-                        </p>
-                        <p className="text-center text-xs leading-6 text-[rgba(0,0,0,0.45)]">
-                          {t(item.text)}
-                        </p>
-                        <button
-                          className="bg-primary cursor-not-allowed rounded-4xl px-4 py-3 text-base text-white"
-                          title="В данный момент недоступно"
-                        >
-                          {t('feature.video')}
-                        </button>
                       </div>
                     </CarouselItem>
                   ))}

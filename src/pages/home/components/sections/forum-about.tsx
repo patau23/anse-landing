@@ -29,9 +29,7 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
           </span>
           <span
             className="text-[32px] leading-[100%] font-semibold tracking-[0.374px] text-transparent not-italic"
-            style={{
-              WebkitTextStroke: '2px #7268E7',
-            }}
+            style={{ WebkitTextStroke: '2px #7268E7' }}
           >
             {index}
           </span>
@@ -44,7 +42,7 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
         ref={ref}
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
-        className="bg-bg-primary relative h-[calc(100vh-64px)] w-full overflow-hidden"
+        className="bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden"
       >
         <div className="absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8 md:top-[34vh] md:w-[60vw] xl:w-[54vw]">
           <SectionHiga

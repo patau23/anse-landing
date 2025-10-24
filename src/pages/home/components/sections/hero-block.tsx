@@ -9,8 +9,6 @@ import AiHeroIcon from '@/shared/assets/imgs/ai-hero-icon.png';
 import InfrontRibbonLines from '@/shared/assets/imgs/first-ribbon-lines-image.png';
 import BehindRibbonLines from '@/shared/assets/imgs/second-ribbon-lines-image.png';
 
-import SectionBadge from '@/shared/components/ui/section-higa/section-badge';
-import SectionTitle from '@/shared/components/ui/section-higa/section-title';
 import SectionHiga from '@/shared/components/ui/section-higa';
 
 interface HeroBlockProps {
