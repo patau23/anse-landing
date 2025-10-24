@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import AboutRibbonLinesLg from '@/shared/assets/imgs/about-ribbon-lines-lg.png';
 import AboutRibbonLines from '@/shared/assets/imgs/about-ribbon-lines.png';
 import SectionHiga from '@/shared/components/ui/section-higa';
 import clsx from 'clsx';
@@ -20,6 +21,7 @@ const Items = [
 const ForumAbout = forwardRef<HTMLDivElement, Props>(
   ({ onViewportEnter }, ref) => {
     const { t } = useTranslation('homePage');
+    const isDesktop = window.innerWidth >= 768;
 
     const listItems = (text: string, index: number) => {
       return (
@@ -83,13 +85,13 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
           />
 
           <img
-            src={AboutRibbonLines}
+            src={isDesktop ? AboutRibbonLinesLg : AboutRibbonLines}
             alt=""
             className={clsx(
               // base
               'absolute bottom-[0px] left-[0px] min-h-[350.164px] min-w-[446px] rotate-[35.428deg]',
               // responsive
-              ''
+              'md:right-0 md:left-auto md:min-h-[561.48px] md:min-w-[787.22px] md:rotate-0'
             )}
           />
 
