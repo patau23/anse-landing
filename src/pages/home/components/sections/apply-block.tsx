@@ -3,9 +3,10 @@ import { forwardRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import FirstRibbonLines from '@/shared/assets/imgs/first-ribbon-lines-image.png';
-
+import FirstRibbonLinesLg from '@/shared/assets/imgs/new-apply-lines-lg.png';
 import DottedArrow from '@/shared/components/ui/dot-arrow';
 import SectionHiga from '@/shared/components/ui/section-higa';
+import clsx from 'clsx';
 
 interface Props {
   onViewportEnter: () => void;
@@ -24,19 +25,46 @@ const Items = [
 const ApplyBlock = forwardRef<HTMLDivElement, Props>(
   ({ onViewportEnter }, ref) => {
     const { t } = useTranslation('homePage');
+    const isDesktop = window.innerWidth >= 768;
 
     const listItems = (text: string, index: number) => {
       return (
-        <div className="flex items-center gap-2">
-          <div className="flex aspect-square h-8 w-8 flex-col items-center justify-center gap-[10px] p-[10px]">
+        <div
+          className={clsx(
+            
+            'flex items-center gap-2',
+            
+            'md:gap-6'
+          )}
+        >
+          <div
+            className={clsx(
+              
+              'flex aspect-square h-8 w-8 flex-col items-center justify-center gap-[10px] p-[10px]',
+              
+              'md:h-[84px] md:w-[84px] md:flex-row md:rounded-[20px] md:bg-[#544BC8]'
+            )}
+          >
             <span
-              className="text-stroke text-center text-[17px] leading-[22px] font-semibold tracking-[-0.408px] text-transparent"
-              style={{ WebkitTextStroke: '2px #7268E7' }}
+              className={clsx(
+                
+                'text-stroke text-center text-[17px] leading-[22px] font-semibold tracking-[-0.408px] text-transparent',
+                
+                'md:text-[64px] md:font-bold md:tracking-[0.37px]'
+              )}
+              style={{ WebkitTextStroke: '3px #7268E7' }}
             >
               {index}
             </span>
           </div>
-          <span className="text-left text-[16px] leading-[21px] font-normal tracking-[-0.32px] text-white">
+          <span
+            className={clsx(
+              
+              'text-left text-[16px] leading-[21px] font-normal tracking-[-0.32px] text-white',
+              
+              'md:text-[22px] md:leading-[1.34] md:tracking-[0.37px]'
+            )}
+          >
             {text}
           </span>
         </div>
@@ -48,9 +76,21 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
         ref={ref}
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
-        className="bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden"
+        className={clsx(
+          
+          'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
+          
+          'md:h-[100vh]'
+        )}
       >
-        <div className="absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8 md:top-[34vh] md:w-[60vw] xl:w-[54vw]">
+        <div
+          className={clsx(
+            
+            'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
+            
+            'md:mt-[150px]'
+          )}
+        >
           <SectionHiga
             badgeText="Как принять участие"
             title="4 шага до участия"
@@ -59,16 +99,42 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
           />
 
           <img
-            src={FirstRibbonLines}
-            className="absolute top-[-107.352px] left-[-109.264px] aspect-[91/72] min-h-[391.214px] min-w-[527.995px] rotate-[-166.242deg]"
+            src={isDesktop ? FirstRibbonLinesLg : FirstRibbonLines}
+            alt=""
+            className={clsx(
+              
+              'absolute top-[-107.352px] left-[-109.264px] aspect-[91/72] min-h-[391.214px] min-w-[527.995px] rotate-[-166.242deg]',
+              
+              'md:top-[-150px] md:right-0 md:left-auto md:aspect-auto md:min-h-auto md:min-w-auto md:rotate-0'
+            )}
           />
 
-          <div className="z-10 flex flex-col items-start gap-3 self-stretch">
-            {Items.map((item) => (
+          <div
+            className={clsx(
+              
+              'z-10 flex flex-col items-start gap-3 self-stretch',
+              
+              'md:gap-[-10px]'
+            )}
+          >
+            {Items.map((item, i) => (
               <motion.div
+                key={item.index}
                 variants={{
                   initial: { x: '-100%', backgroundColor: '#544BC8' },
-                  animated: { x: 0, y: 0, backgroundColor: 'transparent' },
+                  animated: {
+                    x: !isDesktop
+                      ? 0
+                      : i === 0
+                        ? 0
+                        : i === 1
+                          ? '50%'
+                          : i === 2
+                            ? '95%'
+                            : '135%',
+                    y: 0,
+                    backgroundColor: 'transparent',
+                  },
                   initialMobile: { y: '-100%', backgroundColor: '#544BC8' },
                 }}
                 initial={window.innerWidth > 1023 ? 'initial' : 'initialMobile'}
@@ -78,7 +144,12 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
                   backgroundColor: { duration: 0.8, ease: 'easeIn' },
                   x: { duration: 0.8, ease: 'easeInOut' },
                 }}
-                className="z-0 flex w-full flex-col justify-center gap-[1.25vw] rounded-[16px] bg-[#C7EBFF] p-[1.25vw] text-center lg:w-[46vw]"
+                className={clsx(
+                  
+                  'z-0 flex w-full flex-col justify-center gap-[1.25vw] rounded-[16px] bg-[#C7EBFF] p-[1.25vw] text-center',
+                  
+                  'md:p-0 lg:w-[46vw]'
+                )}
               >
                 {listItems(item.label, item.index)}
               </motion.div>
@@ -87,11 +158,18 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
 
           {/*  */}
 
-          <div className="absolute bottom-[10%] left-[-35px] flex h-[157px] w-[361px]">
+          <div
+            className={clsx(
+              
+              'absolute bottom-[10%] left-[-35px] flex h-[157px] w-[361px]',
+              
+              'md:bottom-[200px] md:left-[-25%] md:w-full'
+            )}
+          >
             <DottedArrow
-              className="w-full md:w-[85%]"
-              viewBox="0 0 328 160" // как в твоём SVG
-              d={dGuide} // <-- сюда твой stroke-путь
+              className={clsx('w-full')}
+              viewBox={'0 0 328 160'}
+              d={dGuide}
               color="#7268E7"
               strokeWidth={3}
               dash={[6, 10]}

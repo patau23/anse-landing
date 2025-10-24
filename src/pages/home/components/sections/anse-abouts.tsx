@@ -28,17 +28,17 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
       return (
         <div
           className={clsx(
-            // base
+            
             'flex flex-col items-start justify-center gap-6 self-stretch rounded-xl bg-[#C85E4B] p-3.5',
-            // responsive
+            
             ''
           )}
         >
           <p
             className={clsx(
-              // base
+              
               'self-stretch text-center text-[16px] leading-[21px] font-normal tracking-[-0.32px] text-white',
-              // responsive
+              
               'md:text-[1.5rem] md:leading-[1.34] md:tracking-[0.36px]'
             )}
           >
@@ -54,17 +54,17 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
         className={clsx(
-          // base
+          
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
-          // responsive
+          
           'md:h-[100vh]'
         )}
       >
         <div
           className={clsx(
-            // base
+            
             'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
-            // responsive
+            
             'md:top-[150px]'
           )}
         >
@@ -82,9 +82,9 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
             src={isDesktop ? AiAboutIconLg : AiAboutIcon}
             alt=""
             className={clsx(
-              // base
+              
               'absolute right-[-30px] bottom-0 aspect-[245/244] h-[244px] w-[245px]',
-              // responsive
+              
               'md:right-auto md:bottom-[-30px] md:h-[501px] md:w-[503px]'
             )}
           />
@@ -100,9 +100,9 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
 
           <div
             className={clsx(
-              // base
+              
               'z-10 flex flex-col items-start gap-3 self-stretch',
-              // responsive
+              
               'md:items-center md:gap-[25px]'
             )}
           >
@@ -132,9 +132,9 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
                   x: { duration: 0.8, ease: 'easeInOut' },
                 }}
                 className={clsx(
-                  // base
+                  
                   'z-0 flex w-full flex-col justify-center gap-[1.25vw] rounded-[16px] bg-[#C7EBFF] p-[1.25vw] text-center',
-                  // responsive
+                  
                   'lg:w-[46vw]'
                 )}
               >
@@ -145,9 +145,9 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
 
           <div
             className={clsx(
-              // base
+              
               'absolute bottom-10 left-4 flex flex-col items-start justify-center gap-3',
-              // responsive
+              
               'md:bottom-[200px] '
             )}
           >

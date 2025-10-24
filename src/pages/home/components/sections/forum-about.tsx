@@ -27,17 +27,17 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
       return (
         <div
           className={clsx(
-            // base
+            
             'flex items-center justify-between gap-3 self-stretch px-3 py-3',
-            // responsive
+            
             'md:flex-col md:items-start md:justify-center'
           )}
         >
           <span
             className={clsx(
-              // base
+              
               'flex-[1_0_0] text-left text-[16px] leading-[21px] font-normal tracking-[-0.32px] text-white not-italic',
-              // responsive
+              
               'md:min-h-[68px] md:text-[28px] md:leading-[1.34] md:tracking-[0.36px]'
             )}
           >
@@ -45,9 +45,9 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
           </span>
           <span
             className={clsx(
-              // base
+              
               'text-[32px] leading-[100%] font-semibold tracking-[0.374px] text-transparent not-italic',
-              // responsive
+              
               'md:w-full md:self-stretch md:text-end md:text-[240px] md:font-bold md:tracking-[0.37px]'
             )}
             style={{ WebkitTextStroke: '2px #7268E7' }}
@@ -64,17 +64,17 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
         className={clsx(
-          // base
+          
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
-          // responsive
+          
           'md:h-[100vh]'
         )}
       >
         <div
           className={clsx(
-            // base
+            
             'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
-            // responsive
+            
             'md:top-[150px]'
           )}
         >
@@ -88,18 +88,18 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
             src={isDesktop ? AboutRibbonLinesLg : AboutRibbonLines}
             alt=""
             className={clsx(
-              // base
+              
               'absolute bottom-[0px] left-[0px] min-h-[350.164px] min-w-[446px] rotate-[35.428deg]',
-              // responsive
+              
               'md:right-0 md:left-auto md:min-h-[561.48px] md:min-w-[787.22px] md:rotate-0'
             )}
           />
 
           <div
             className={clsx(
-              // base
+              
               'z-10 flex flex-col items-start gap-3 self-stretch',
-              // responsive
+              
               'md:flex-row md:gap-4'
             )}
           >
@@ -119,9 +119,9 @@ const ForumAbout = forwardRef<HTMLDivElement, Props>(
                   x: { duration: 0.8, ease: 'easeInOut' },
                 }}
                 className={clsx(
-                  // base
+                  
                   'z-0 flex w-full flex-col justify-center gap-[1.25vw] rounded-[16px] bg-[#C7EBFF] p-[1.25vw] text-center',
-                  // responsive
+                  
                   'md:h-[360px] md:rounded-[20px]',
                   'lg:w-[46vw]'
                 )}

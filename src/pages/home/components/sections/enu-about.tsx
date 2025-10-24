@@ -23,7 +23,7 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
         className={clsx(
-          // base
+          
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
           // md+
           'md:h-[100vh]'
@@ -31,7 +31,7 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
       >
         <div
           className={clsx(
-            // base
+            
             'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-8 self-stretch px-0 py-8',
             // md+
             'md:top-[150px]'
@@ -45,7 +45,7 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
 
           <div
             className={clsx(
-              // base
+              
               'flex flex-col items-center gap-2 self-stretch bg-white p-[12px_0_24px_0]',
               // md+
               'md:top-[150px]'
