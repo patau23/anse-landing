@@ -3,6 +3,7 @@ import i18next from 'i18next';
 import { type FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Logo from '@/shared/assets/icons/anse-enu-logo-white.svg?react';
 import Burger from '@/shared/assets/icons/burger.svg?react';
 import Close from '@/shared/assets/icons/close.svg?react';
 import Down from '@/shared/assets/icons/down.svg?react';
@@ -20,8 +21,8 @@ import {
 import { LanguageFlagMap } from '@/shared/constants/i18n/LanguageFlagMap.ts';
 import { Sections } from '@/shared/constants/navigation.ts';
 import { useStore } from '@/store';
+import clsx from 'clsx';
 import { AnimatePresence } from 'motion/react';
-import Logo from '@/shared/assets/icons/anse-enu-logo-white.svg?react';
 
 interface HeaderProps {
   handleTabClick: (tabValue: string) => void;
@@ -44,15 +45,18 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
 
   const langPicker = (
     <DropdownMenu>
-      <DropdownMenuTrigger className="bg-tab-bg my-4 mt-auto mr-4 flex rounded-[1.25rem] p-4 py-4 md:my-0 md:mt-0 md:bg-white md:py-0">
+      <DropdownMenuTrigger
+        className={clsx(
+          'bg-tab-bg my-4 mt-auto mr-4 flex items-center justify-center gap-1 p-4 py-4',
+          'md:my-0 md:mt-0 md:gap-[12px] md:p-1.5'
+        )}
+      >
         <img
           src={LanguageFlagMap[i18next.language]}
           alt={i18next.language}
-          className="h-5 w-8"
+          className="h-5 w-8 rounded-2xl"
         />
-        <span className="mr-1 ml-2 flex items-center justify-center">
-          {i18next.language.toUpperCase()}
-        </span>
+
         <Down />
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -77,7 +81,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
     </div>
   );
 
-  const desktopHeader = (
+  const header = (
     <AnimatePresence>
       {!hidden && (
         <>
@@ -104,7 +108,10 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             animate={hidden ? 'hidden' : 'visible'}
             exit={'hidden'}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="md:bg-tab-bg bg-tab-bg fixed top-0 right-[0] z-[25] flex h-[100dvh] w-[220px] flex-col items-center justify-start gap-4 rounded-none md:sticky md:top-0 md:right-auto md:h-22 md:w-full md:flex-row md:justify-between md:gap-0 md:rounded-full"
+            className={clsx(
+              'bg-tab-bg fixed top-0 right-[0] z-[25] flex h-[100dvh] w-[220px] flex-col items-center justify-start gap-4 rounded-none',
+              'md:bg-tab-bg md:relative md:inset-auto md:mx-auto md:h-22 md:w-full md:max-w-6xl md:flex-row md:items-center md:justify-center md:gap-0 md:rounded-full md:px-6 md:py-3'
+            )}
           >
             <div
               onClick={() => setHidden(true)}
@@ -124,7 +131,13 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
                 defaultValue={section}
                 className="bg-bg-body h-11 w-full flex-col p-0 md:flex-row md:p-1"
               >
-                {Sections.map((tab: string) => (
+                {[
+                  Sections[1],
+                  Sections[2],
+                  Sections[3],
+                  Sections[4],
+                  Sections[5],
+                ].map((tab: string) => (
                   <TabsTrigger
                     key={tab}
                     value={tab}
@@ -145,8 +158,13 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             {/* Language Picker */}
             {langPicker}
 
-            <button className="rounded-[32px] bg-white px-4 py-3 font-semibold text-black transition-all duration-300 ease-in-out hover:scale-105 hover:bg-blue-400 hover:shadow-lg md:px-6 md:py-4">
-              Регистрация
+            <button
+              className={clsx(
+                'max-h-[42px] rounded-[12px] bg-white px-[24px] py-[10px] font-semibold text-black transition-all duration-300 ease-in-out hover:scale-105 hover:bg-indigo-400',
+                ''
+              )}
+            >
+              <span>Регистрация</span>
             </button>
           </motion.div>
         </>
@@ -169,8 +187,13 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
   );
 
   return (
-    <header className="sticky top-0 z-[25]">
-      {desktopHeader}
+    <header
+      className={clsx(
+        'top-0 z-[30]',
+        'md:bg-background md:bg-opacity-80 md:fixed md:right-0 md:left-0 md:m-[24px] md:rounded-[20px] md:backdrop-blur-md'
+      )}
+    >
+      {header}
       {mobileHeader}
     </header>
   );

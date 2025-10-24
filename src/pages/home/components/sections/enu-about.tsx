@@ -20,7 +20,7 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
         ref={ref}
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
-        className="bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden"
+        className="bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden md:h-[100vh]"
       >
         <div className="absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-8 self-stretch px-0 py-8 md:top-[34vh] md:w-[60vw] xl:w-[54vw]">
           <SectionHiga

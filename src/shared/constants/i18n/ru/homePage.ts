@@ -1,10 +1,12 @@
 export const homePage = {
   header: {
-    cases: 'Кейсы',
-    tariffs: 'Тарифы',
-    faq: 'FAQ',
     hero: 'О нас',
-    login: 'Вход',
+    'forum-about': 'О форуме',
+    'anse-abouts': 'АНСЭ',
+    'enu-about': 'ЕНУ',
+    speakers: 'Спикеры',
+    training: 'Тренинг',
+    'apply-block': 'Регистрация',
   },
   hero: {
     title: 'Форум',

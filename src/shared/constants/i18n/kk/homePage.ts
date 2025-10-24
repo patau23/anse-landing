@@ -7,7 +7,7 @@ export const homePage = {
     login: 'Кіру',
   },
   hero: {
-    title: 'DDent —',
+    title: 'Форум',
     subtitle: {
       start: 'цифрлық',
       middle: 'стоматология',

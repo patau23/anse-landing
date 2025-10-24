@@ -1,1 +1,9 @@
-export const Sections = ["hero", "cases", "tariffs", "faq", "login"];
+export const Sections = [
+  'hero',
+  'forum-about',
+  'anse-abouts',
+  'enu-about',
+  'speakers',
+  'training',
+  'apply-block',
+];

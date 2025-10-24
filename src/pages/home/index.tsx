@@ -41,6 +41,7 @@ const HomePage = () => {
   const handleViewportEnter = (idx: number) => {
     if (!isScrolling && window.innerWidth > 768) {
       setSection(Sections[idx]);
+      // setIsScrolling(true);
       sectionRefs[idx]?.current?.scrollIntoView({
         block: 'start',
       });
@@ -78,19 +79,23 @@ const HomePage = () => {
   return (
     <div className="overflow-hidden">
       <Header handleTabClick={handleTabClick} />
+
       <HeroBlock
         ref={heroRef}
         onViewportEnter={() => handleViewportEnter(0)}
         handleTabClick={handleTabClick}
       />
+
       <ForumAbout
         ref={secondref}
         onViewportEnter={() => handleViewportEnter(1)}
       />
+
       <AnseAbouts
         ref={thirdref}
         onViewportEnter={() => handleViewportEnter(2)}
       />
+
       <EnuAbout
         ref={fourthref}
         onViewportEnter={() => handleViewportEnter(3)}
@@ -106,28 +111,6 @@ const HomePage = () => {
       />
 
       <Footer onViewportEnter={() => handleViewportEnter(7)} />
-
-      {/* <FeatureSection
-        ref={featureRef}
-        onViewportEnter={() => handleViewportEnter(2)}
-      />
-      <ServiceSection
-        ref={serviceRef}
-        onViewportEnter={() => handleViewportEnter(3)}
-      />
-      <ClinicsSection
-        ref={clinicsRef}
-        onViewportEnter={() => handleViewportEnter(4)}
-      />
-      <TariffSection
-        ref={tariffRef}
-        onViewportEnter={() => handleViewportEnter(5)}
-      />
-      <FaqSection ref={faqRef} onViewportEnter={() => handleViewportEnter(6)} />
-      <FormSection
-        ref={formRef}
-        onViewportEnter={() => handleViewportEnter(7)}
-      /> */}
     </div>
   );
 };
