@@ -29,27 +29,16 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
 
     const listItems = (text: string, index: number) => {
       return (
-        <div
-          className={clsx(
-            
-            'flex items-center gap-2',
-            
-            'md:gap-6'
-          )}
-        >
+        <div className={clsx('flex items-center gap-2', 'md:gap-6')}>
           <div
             className={clsx(
-              
               'flex aspect-square h-8 w-8 flex-col items-center justify-center gap-[10px] p-[10px]',
-              
               'md:h-[84px] md:w-[84px] md:flex-row md:rounded-[20px] md:bg-[#544BC8]'
             )}
           >
             <span
               className={clsx(
-                
                 'text-stroke text-center text-[17px] leading-[22px] font-semibold tracking-[-0.408px] text-transparent',
-                
                 'md:text-[64px] md:font-bold md:tracking-[0.37px]'
               )}
               style={{ WebkitTextStroke: '3px #7268E7' }}
@@ -59,9 +48,7 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
           </div>
           <span
             className={clsx(
-              
               'text-left text-[16px] leading-[21px] font-normal tracking-[-0.32px] text-white',
-              
               'md:text-[22px] md:leading-[1.34] md:tracking-[0.37px]'
             )}
           >
@@ -77,17 +64,13 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
         className={clsx(
-          
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
-          
           'md:h-[100vh]'
         )}
       >
         <div
           className={clsx(
-            
             'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
-            
             'md:mt-[150px]'
           )}
         >
@@ -102,18 +85,14 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
             src={isDesktop ? FirstRibbonLinesLg : FirstRibbonLines}
             alt=""
             className={clsx(
-              
               'absolute top-[-107.352px] left-[-109.264px] aspect-[91/72] min-h-[391.214px] min-w-[527.995px] rotate-[-166.242deg]',
-              
               'md:top-[-150px] md:right-0 md:left-auto md:aspect-auto md:min-h-auto md:min-w-auto md:rotate-0'
             )}
           />
 
           <div
             className={clsx(
-              
               'z-10 flex flex-col items-start gap-3 self-stretch',
-              
               'md:gap-[-10px]'
             )}
           >
@@ -145,9 +124,7 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
                   x: { duration: 0.8, ease: 'easeInOut' },
                 }}
                 className={clsx(
-                  
                   'z-0 flex w-full flex-col justify-center gap-[1.25vw] rounded-[16px] bg-[#C7EBFF] p-[1.25vw] text-center',
-                  
                   'md:p-0 lg:w-[46vw]'
                 )}
               >
@@ -156,13 +133,9 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
             ))}
           </div>
 
-          {/*  */}
-
           <div
             className={clsx(
-              
               'absolute bottom-[10%] left-[-35px] flex h-[157px] w-[361px]',
-              
               'md:bottom-[200px] md:left-[-25%] md:w-full'
             )}
           >
@@ -177,8 +150,6 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
               once
             />
           </div>
-
-          {/*  */}
         </div>
       </motion.section>
     );

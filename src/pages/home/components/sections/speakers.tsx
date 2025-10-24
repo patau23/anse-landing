@@ -131,11 +131,7 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
           >
             <Carousel
               opts={{ loop: true }}
-              className={clsx(
-                'w-full max-w-sm sm:max-w-3xl',
-
-                'md:max-w-none'
-              )}
+              className={clsx('w-full max-w-sm sm:max-w-3xl', 'md:max-w-none')}
             >
               <CarouselContent className={clsx('', '')}>
                 {FeatureItems.map((item, index) => (
