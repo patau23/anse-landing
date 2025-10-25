@@ -152,7 +152,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
             </TabsWrapper>
 
             {/* Language Picker */}
-            {langPicker}
+            {/* {langPicker} */}
 
             {/* <button
               className={clsx(
@@ -186,7 +186,7 @@ const Header: FC<HeaderProps> = ({ handleTabClick }) => {
     <header
       className={clsx(
         'top-0 z-[30]',
-        'md:bg-background md:bg-opacity-80 md:fixed md:right-0 md:left-0 md:m-[24px] md:rounded-[20px] md:backdrop-blur-md'
+        'md:bg-background md:bg-opacity-80 md:fixed md:right-0 md:left-0 md:m-[12px] md:rounded-[20px] md:backdrop-blur-md'
       )}
     >
       {header}

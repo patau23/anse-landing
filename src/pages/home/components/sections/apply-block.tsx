@@ -18,7 +18,7 @@ interface Props {
 const TEXT = {
   section: {
     badge: 'Как принять участие',
-    title: '4 шага до участия',
+    title: '3 шага до участия',
     description:
       '4 часа интенсивной работы с реальными кейсами и современными AI-инструментами.\nМалые группы по 15–20 человек, персональная работа с тренерами..',
   },
@@ -88,13 +88,13 @@ const ApplyBlock = forwardRef<HTMLDivElement, Props>(
         viewport={{ amount: 0.005 }}
         className={clsx(
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
-          'md:h-auto md:min-h-[100vh]'
+          'md:h-[100vh] md:min-h-[800px]'
         )}
       >
         <div
           className={clsx(
             'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
-            'md:mt-[150px]'
+            'md:mt-[100px]'
           )}
         >
           <SectionHiga

@@ -89,7 +89,7 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
         ref={ref}
         className={clsx(
           'bg-bg-primary relative flex h-[calc(80vh)] w-full flex-col items-center gap-[12px] self-stretch overflow-hidden px-2 py-8',
-          'md:h-[100vh] md:justify-center'
+          'md:h-[100vh] md:min-h-[800px] md:justify-center'
         )}
       >
         <div
@@ -172,14 +172,14 @@ const Speakers = forwardRef<HTMLDivElement, FeatureSectionProps>(
                           </p>
                         </div>
 
-                        <p
+                        {/* <p
                           className={clsx(
                             'w-full text-center text-base text-[17px] leading-6 font-normal text-white',
                             'md:text-[18px] md:leading-[1.34] md:tracking-[0.46px]'
                           )}
                         >
                           {item.topic}
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   </CarouselItem>

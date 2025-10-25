@@ -35,14 +35,13 @@ const Items = TEXT.items;
 
 const AnseAbouts = forwardRef<HTMLDivElement, Props>(
   ({ onViewportEnter }, ref) => {
-    const { t } = useTranslation('homePage');
     const isDesktop = window.innerWidth >= 768;
 
     const listItems = (text: string | ReactNode) => {
       return (
         <div
           className={clsx(
-            'flex flex-col items-start justify-center gap-6 self-stretch rounded-xl bg-[#C85E4B] p-3.5',
+            'flex flex-col items-start justify-center gap-6 self-stretch rounded-xl bg-[#C85E4B]',
             ''
           )}
         >
@@ -65,13 +64,13 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
         viewport={{ amount: 0.005 }}
         className={clsx(
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
-          'md:h-[100vh]'
+          'md:h-[100vh] md:min-h-[800px]'
         )}
       >
         <div
           className={clsx(
-            'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
-            'md:top-[150px]'
+            'z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
+            'md:mt-[100px]'
           )}
         >
           <SectionHiga
@@ -145,12 +144,12 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
 
           <div
             className={clsx(
-              'absolute bottom-10 left-4 flex flex-col items-start justify-center gap-3',
-              'md:bottom-[200px]'
+              'absolute bottom-10 left-[46px] flex flex-col items-start justify-center gap-3',
+              'md:bottom-[46px]'
             )}
           >
             <SocialTag type="inst" />
-            <SocialTag type="vk" />
+            {/* <SocialTag type="vk" /> */}
           </div>
         </div>
       </motion.section>

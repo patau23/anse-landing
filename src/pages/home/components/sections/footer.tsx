@@ -6,6 +6,7 @@ import PhoneIcon from '@/shared/assets/icons/ios/ios-phone.svg?react';
 import PinPointIcon from '@/shared/assets/icons/ios/ios-pin-point.svg?react';
 import InstIcon from '@/shared/assets/icons/socials/insta-outlined.svg?react';
 import TgIcon from '@/shared/assets/icons/socials/telegram-icon.svg?react';
+import WhatsAppIcon from '@/shared/assets/icons/socials/whatsapp-outlined.svg?react';
 import SectionBadge from '@/shared/components/ui/section-higa/section-badge';
 import clsx from 'clsx';
 
@@ -23,9 +24,17 @@ const Footer = ({ onViewportEnter }: Props) => {
   const { t } = useTranslation('homePage');
   const isDesktop = window.innerWidth >= 768;
 
-  const listItems = (icon: string | React.ReactNode, text: string) => {
+  const listItems = (
+    icon: string | React.ReactNode,
+    text: string,
+    link: string
+  ) => {
     return (
-      <a className={clsx('flex items-center gap-3', '')}>
+      <a
+        className={clsx('flex items-center gap-3', '')}
+        href={link}
+        target="_blank"
+      >
         <span
           className={clsx(
             'flex aspect-square h-8 w-8 flex-col items-center justify-center gap-[10px] rounded-lg bg-[var(--Label-Color-Dark-Quaternary,rgba(235,235,245,0.18))] p-[12px_16px]',
@@ -68,9 +77,21 @@ const Footer = ({ onViewportEnter }: Props) => {
           )}
         >
           <SectionBadge text="Контакты" />
-          {listItems(<PhoneIcon />, '+7 777 013 77 73')}
-          {listItems(<MailIcon />, 'ansesykz@gmail.com')}
-          {listItems(<PinPointIcon />, 'Астана, ЕНУ им. Л.Н. Гумилёва')}
+          {listItems(
+            <PhoneIcon className={clsx('', 'md:scale-[237.5%]')} />,
+            '+7 777 013 77 73',
+            'tel:+77770137773'
+          )}
+          {listItems(
+            <MailIcon className={clsx('', 'md:scale-[237.5%]')} />,
+            'ansesykz@gmail.com',
+            'mailto:ansesykz@gmail.com'
+          )}
+          {listItems(
+            <PinPointIcon className={clsx('', 'md:scale-[237.5%]')} />,
+            'Астана, ЕНУ им. Л.Н. Гумилёва',
+            'https://go.2gis.com/MZw7B'
+          )}
         </div>
 
         <div
@@ -87,10 +108,22 @@ const Footer = ({ onViewportEnter }: Props) => {
           )}
         >
           <SectionBadge text="Соцсети" />
-          {listItems(<InstIcon />, 'https://www.instagram.com/ansesykz/')}
+          {listItems(
+            <InstIcon className={clsx('', 'md:scale-[237.5%]')} />,
+            'AnsesyKz@ig',
+            'https://www.instagram.com/ansesykz/'
+          )}
           {/* {listItems(<VkIcon />, 'info@anse.kz')} */}
-          {listItems(<TgIcon />, 'Telegram')}
-          {listItems(<TgIcon />, 'WhatsApp')}
+          {listItems(
+            <TgIcon className={clsx('', 'md:scale-[237.5%]')} />,
+            'Telegram',
+            'https://t.me/ansesykz'
+          )}
+          {listItems(
+            <WhatsAppIcon className={clsx('', 'md:scale-[237.5%]')} />,
+            'WhatsApp',
+            'https://api.whatsapp.com/send/?phone=77710333525&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%9F%D0%B8%D1%88%D1%83+%D0%B8%D0%B7+%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F+2%D0%93%D0%98%D0%A1.%0A%0A&type=phone_number&app_absent=0'
+          )}
         </div>
 
         <div

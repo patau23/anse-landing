@@ -74,19 +74,18 @@ const Training = forwardRef<HTMLDivElement, Props>(
         viewport={{ amount: 0.005 }}
         className={clsx(
           'bg-bg-primary relative h-[calc(80vh)] w-full overflow-hidden',
-          'md:h-[100vh]'
+          'md:h-[100vh] md:min-h-[800px]'
         )}
       >
         <div
           className={clsx(
             'absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center gap-6 self-stretch px-2 py-8',
-            'md:mt-[150px] md:gap-[50px]'
+            'md:mt-[100px] md:gap-[50px]'
           )}
         >
           <SectionHiga
             badgeText="Анонс"
             title="Презентация зарегистрированной автоматизированной программы"
-            // description="4 часа интенсивной работы с реальными кейсами и современными AI-инструментами. Малые группы по 15–20 человек, персональная работа с тренерами."
           />
 
           {!isDesktop && (

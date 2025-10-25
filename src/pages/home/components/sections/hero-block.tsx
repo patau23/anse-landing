@@ -81,7 +81,10 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
         ref={ref}
         onViewportEnter={onViewportEnter}
         viewport={{ amount: 0.005 }}
-        className="bg-bg-primary relative h-[calc(100vh-64px)] w-full overflow-hidden md:h-[calc(100vh+88px)]"
+        className={clsx(
+          'bg-bg-primary relative h-[calc(100vh-64px)] w-full overflow-hidden',
+          'md:h-[calc(100vh+88px)] md:min-h-[800px]'
+        )}
       >
         <motion.div
           variants={{ initial: { opacity: 0 }, animated: { opacity: 1 } }}
@@ -91,7 +94,7 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
           style={{ overflow: 'hidden' }}
           className="absolute top-0 right-0 z-5 flex h-full w-full flex-col items-center self-stretch px-2 py-8"
         >
-          <div className="z-30 flex flex-col items-center gap-6 self-stretch md:mt-[150px]">
+          <div className="z-30 flex flex-col items-center gap-6 self-stretch md:mt-[100px]">
             <SectionHiga
               badgeText={t('hero.title')}
               title={'Будущее судебной экспертизы в эпоху ИИ'}
@@ -113,7 +116,7 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
               )}
             </div>
 
-            <button
+            {/* <button
               className={clsx(
                 'flex items-center justify-center gap-2.5 rounded-[10px] bg-white px-[20px] py-3 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg md:px-6 md:py-4',
                 'md:max-h-[54px]'
@@ -122,7 +125,7 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
               <span className="text-[1rem] leading-[21px] font-semibold tracking-[-0.32px] text-black [font-style:normal] md:text-[17px]">
                 Зарегистрироваться сейчас
               </span>
-            </button>
+            </button> */}
           </div>
 
           <img
