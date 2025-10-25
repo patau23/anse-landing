@@ -34,6 +34,7 @@ const Footer = ({ onViewportEnter }: Props) => {
         className={clsx('flex items-center gap-3', '')}
         href={link}
         target="_blank"
+        rel="noreferrer"
       >
         <span
           className={clsx(
@@ -113,7 +114,6 @@ const Footer = ({ onViewportEnter }: Props) => {
             'AnsesyKz@ig',
             'https://www.instagram.com/ansesykz/'
           )}
-          {/* {listItems(<VkIcon />, 'info@anse.kz')} */}
           {listItems(
             <TgIcon className={clsx('', 'md:scale-[237.5%]')} />,
             'Telegram',

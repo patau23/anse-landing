@@ -69,7 +69,7 @@ const EnuAbout = forwardRef<HTMLDivElement, Props>(
 
           <div className="flex items-center gap-4">
             <SocialTag type="inst" />
-            <SocialTag type="vk" />
+            <SocialTag type="wp" />
           </div>
         </div>
       </motion.section>

@@ -144,12 +144,12 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
 
           <div
             className={clsx(
-              'absolute bottom-10 left-[46px] flex flex-col items-start justify-center gap-3',
+              'absolute bottom-10 left-[46px] z-30 flex flex-col items-start justify-center gap-3',
               'md:bottom-[46px]'
             )}
           >
             <SocialTag type="inst" />
-            {/* <SocialTag type="vk" /> */}
+            <SocialTag type="wp" />
           </div>
         </div>
       </motion.section>
