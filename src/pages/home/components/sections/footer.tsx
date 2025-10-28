@@ -111,7 +111,7 @@ const Footer = ({ onViewportEnter }: Props) => {
           <SectionBadge text="Соцсети" />
           {listItems(
             <InstIcon className={clsx('', 'md:scale-[237.5%]')} />,
-            'AnsesyKz@ig',
+            'Instagram',
             'https://www.instagram.com/internation_forum?igsh=MWI4MGk0aTg1YjhrMg=='
           )}
           {listItems(
