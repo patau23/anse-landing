@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import Calendar from '@/shared/assets/icons/ios/ios-calendar.svg?react';
 import Pinpoint from '@/shared/assets/icons/ios/ios-pin-point.svg?react';
+import CreditCard from '@/shared/assets/icons/ios/ios-credit-card.svg?react';
 
 import AiHeroIconLg from '@/shared/assets/imgs/ai-hero-icon-lg.png';
 import AiHeroIcon from '@/shared/assets/imgs/ai-hero-icon.png';
@@ -113,6 +114,10 @@ const HeroBlock = forwardRef<HTMLDivElement, HeroBlockProps>(
               {listItem(
                 'Астана, ЕНУ им. Л.Н. Гумилёва',
                 <Pinpoint className="min-h-[20px] md:min-h-[38px] md:min-w-[32px]" />
+              )}
+              {listItem(
+                'Входной билет: 5000 ₸ (оплата наличными или по QR)',
+                <CreditCard className="min-h-[20px] md:min-h-[38px] md:min-w-[32px]" />
               )}
             </div>
 

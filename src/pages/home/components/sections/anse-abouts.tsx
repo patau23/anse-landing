@@ -26,7 +26,7 @@ const TEXT = {
   },
   items: [
     { index: 1, label: 'Признаны судами и следственными органами' },
-    { index: 2, label: 'Признаны судами и следственными органами' },
+    { index: 2, label: 'Многолетний опыт работы' },
     { index: 3, label: 'Работаем по всей стране' },
   ] as { index: number; label: string }[],
 } as const;
@@ -76,9 +76,9 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
           <SectionHiga
             badgeText={TEXT.section.badge}
             title={
-              <>
+              <span className="text-[74px]">
                 {TEXT.section.titlePart1} <br /> {TEXT.section.titlePart2}
-              </>
+              </span>
             }
             description={TEXT.section.description}
           />
