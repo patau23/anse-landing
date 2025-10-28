@@ -76,7 +76,7 @@ const AnseAbouts = forwardRef<HTMLDivElement, Props>(
           <SectionHiga
             badgeText={TEXT.section.badge}
             title={
-              <span className="text-[74px]">
+              <span className="md:text-[74px]">
                 {TEXT.section.titlePart1} <br /> {TEXT.section.titlePart2}
               </span>
             }

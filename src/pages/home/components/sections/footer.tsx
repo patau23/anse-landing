@@ -112,7 +112,7 @@ const Footer = ({ onViewportEnter }: Props) => {
           {listItems(
             <InstIcon className={clsx('', 'md:scale-[237.5%]')} />,
             'AnsesyKz@ig',
-            'https://www.instagram.com/ansesykz/'
+            'https://www.instagram.com/internation_forum?igsh=MWI4MGk0aTg1YjhrMg=='
           )}
           {listItems(
             <TgIcon className={clsx('', 'md:scale-[237.5%]')} />,
